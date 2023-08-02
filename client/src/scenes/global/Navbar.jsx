@@ -40,7 +40,7 @@ function Navbar() {
           sx={{ "&:hover": { cursor: "pointer" } }}
           color={shades.secondary[500]}
         >
-          ApniDukaan
+          <b>ApniDukaan</b>
         </Box>
         <Box
           display="flex"
