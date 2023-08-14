@@ -10,6 +10,8 @@ import { useNavigate } from "react-router-dom";
 import { shades } from "../../theme";
 import { setIsCartOpen } from "../../state";
 
+const AppleFont = "'SF Pro', 'Helvetica Neue', sans-serif"; // Use the appropriate Apple font name
+
 function Navbar() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -17,12 +19,19 @@ function Navbar() {
 
   return (
     <Box
+      sx = {{
+        backgroundImage:'url("../../Navbar_BG.jpg")',
+        backgroundSize: 'cover',
+        alignItems: 'center',
+        display: 'flex',
+      }}
+
       display="flex"
       alignItems="center"
       width="100%"
       height="60px"
       backgroundColor="rgba(255, 255, 255, 0.95)"
-      color="black"
+      color="black" 
       position="fixed"
       top="0"
       left="0"
@@ -37,10 +46,15 @@ function Navbar() {
       >
         <Box
           onClick={() => navigate("/")}
-          sx={{ "&:hover": { cursor: "pointer" } }}
+          sx={{ "&:hover": { cursor: "pointer" } , color : shades.secondary[500],
+          fontFamily : AppleFont, fontSize : "18px",
+          display : "flex",
+          alignItems : "center",
+          gap : "0px"
+        }}
           color={shades.secondary[500]}
         >
-          <b>ApniDukaan</b>
+        <b> ApniDukaan : <i> Dil se Shopping ! </i> </b>
         </Box>
         <Box
           display="flex"
@@ -48,10 +62,10 @@ function Navbar() {
           columnGap="20px"
           zIndex="2"
         >
-          <IconButton sx={{ color: "black" }}>
+          <IconButton sx={{ color: "black" , backgroundColor : "white"}}>
             <SearchOutlined />
           </IconButton>
-          <IconButton sx={{ color: "black" }}>
+          <IconButton sx={{ color: "black" , backgroundColor : "white"}}>
             <PersonOutline />
           </IconButton>
           <Badge
@@ -70,12 +84,12 @@ function Navbar() {
           >
             <IconButton
               onClick={() => dispatch(setIsCartOpen({}))}
-              sx={{ color: "black" }}
+              sx={{ color: "black" , backgroundColor : "white"}}
             >
               <ShoppingBagOutlined />
             </IconButton>
           </Badge>
-          <IconButton sx={{ color: "black" }}>
+          <IconButton sx={{ color: "black", backgroundColor : "white"}}>
             <MenuOutlined />
           </IconButton>
         </Box>
