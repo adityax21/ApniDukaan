@@ -74,19 +74,20 @@ const MainCarousel = () => {
             textAlign="left"
             backgroundColor="rgb(0, 0, 0, 0.4)"
             position="absolute"
-            top="25%"
+            top="46%"
             left={isNonMobile ? "10%" : "0"}
             right={isNonMobile ? undefined : "0"}
             margin={isNonMobile ? undefined : "0 auto"}
             maxWidth={isNonMobile ? undefined : "240px"}
           >
-            <Typography color={shades.secondary[200]}></Typography>
-            <Typography variant="h1">DIWALI SALE</Typography>
+            <Typography color={shades.secondary[200]}>FESTIVE JOY</Typography>
+            <Typography variant="h1">Holi Sale</Typography>
             <Typography
               fontWeight="bold"
               color={shades.secondary[300]}
               sx={{ textDecoration: "underline" }}
             >
+              SHOP NOW
             </Typography>
           </Box>
         </Box>

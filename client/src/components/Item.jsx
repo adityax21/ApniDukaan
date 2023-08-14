@@ -85,7 +85,7 @@ const Item = ({ item, width }) => {
             .replace(/^./, (str) => str.toUpperCase())} {/*first char of string to UC */}
         </Typography>
         <Typography>{name}</Typography>
-        <Typography fontWeight="bold">₹{price}</Typography>
+        <Typography fontWeight="bold">${price}</Typography>
       </Box>
     </Box>
   );
