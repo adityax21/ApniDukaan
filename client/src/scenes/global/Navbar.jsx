@@ -10,6 +10,11 @@ import { useNavigate } from "react-router-dom";
 import { shades } from "../../theme";
 import { setIsCartOpen } from "../../state";
 
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=FontName&display=swap"
+/>
+
 function Navbar() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -17,10 +22,14 @@ function Navbar() {
 
   return (
     <Box
+    sx = {{
+      backgroundImage:'url("../../background.png")',
+      backgroundSize: 'cover',
+    }}
       display="flex"
       alignItems="center"
       width="100%"
-      height="60px"
+      height="50px"
       backgroundColor="rgba(255, 255, 255, 0.95)"
       color="black"
       position="fixed"
@@ -37,10 +46,13 @@ function Navbar() {
       >
         <Box
           onClick={() => navigate("/")}
-          sx={{ "&:hover": { cursor: "pointer" } }}
+          sx={{ "&:hover": { cursor: "pointer" },
+          fontSize : "16px",
+          fontFamily: "'FontName', sans-serif",
+          }}
           color={shades.secondary[500]}
         >
-          <b>ApniDukaan</b>
+          <b>ApniDukaan : <i> DIl se Shopping !</i> </b>
         </Box>
         <Box
           display="flex"
