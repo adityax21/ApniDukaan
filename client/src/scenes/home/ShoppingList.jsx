@@ -21,7 +21,7 @@ const ShoppingList = () => {
 
   async function getItems() {
     const items = await fetch(
-      "https://apnidukaan-backend-f4kb.onrender.com/api/items?populate=image",
+      "https://apnidukaan-backend-up90.onrender.com/api/items?populate=image",
       { method: "GET" }
     );
     const itemsJson = await items.json();
