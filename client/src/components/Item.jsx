@@ -39,7 +39,7 @@ const Item = ({ item, width }) => {
           alt={item.name}
           width="300px"
           height="400px"
-          src={`http://localhost:1337${url}`}
+          src={`https://apnidukaan-backend-f4kb.onrender.com${url}`}
           onClick={() => navigate(`/item/${item.id}`)}
           style={{ cursor: "pointer" }}
         />
