@@ -9,6 +9,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import { shades } from "../../theme";
 import { setIsCartOpen } from "../../state";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 <link
   rel="stylesheet"
@@ -19,12 +20,15 @@ function Navbar() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.cart);
+  const isNonMobile = useMediaQuery("(min-width:600px)");
 
   return (
     <Box
     sx = {{
-      backgroundImage:'url("../../background.png")',
+      backgroundImage:'url("../../background.jpg")',
       backgroundSize: 'cover',
+      borderBottomStyle : 'groove',
+      borderBlock : 'groove',
     }}
       display="flex"
       alignItems="center"
@@ -38,7 +42,7 @@ function Navbar() {
       zIndex="1"
     >
       <Box
-        width="80%"
+        width="90%"
         margin="auto"
         display="flex"
         justifyContent="space-between"
@@ -49,10 +53,13 @@ function Navbar() {
           sx={{ "&:hover": { cursor: "pointer" },
           fontSize : "16px",
           fontFamily: "'FontName', sans-serif",
+          padding : "5px 20px",
+          backgroundColor : "white",
           }}
+          borderRadius = "25px"
           color={shades.secondary[500]}
         >
-          <b>ApniDukaan : <i> DIl se Shopping !</i> </b>
+          {isNonMobile ? (<text>ApniDukaan : <i> Dil se Shopping ♡ </i> </text> ) :(<text>ApniDukaan ♡ </text>)}
         </Box>
         <Box
           display="flex"
@@ -60,10 +67,10 @@ function Navbar() {
           columnGap="20px"
           zIndex="2"
         >
-          <IconButton sx={{ color: "black" }}>
+          <IconButton sx={{ color: "black", backgroundColor : "white" }}>
             <SearchOutlined />
           </IconButton>
-          <IconButton sx={{ color: "black" }}>
+          <IconButton sx={{ color: "black" , backgroundColor : "white"}}>
             <PersonOutline />
           </IconButton>
           <Badge
@@ -82,12 +89,12 @@ function Navbar() {
           >
             <IconButton
               onClick={() => dispatch(setIsCartOpen({}))}
-              sx={{ color: "black" }}
+              sx={{ color: "black" , backgroundColor : "white"}}
             >
               <ShoppingBagOutlined />
             </IconButton>
           </Badge>
-          <IconButton sx={{ color: "black" }}>
+          <IconButton sx={{ color: "black", backgroundColor : "white"}}>
             <MenuOutlined />
           </IconButton>
         </Box>

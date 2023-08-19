@@ -43,53 +43,66 @@ const ShoppingList = () => {
   );
 
   return (
-    <Box width="80%" margin="80px auto">
-      <Typography variant="h3" textAlign="center">
-        <b>Featured Products</b>
-      </Typography>
-      <Tabs
-        textColor="primary"
-        indicatorColor="primary"
-        value={value}
-        onChange={handleChange}
-        centered
-        TabIndicatorProps={{ sx: { display: breakPoint ? "block" : "none" } }}
-        sx={{
-          m: "25px",
-          "& .MuiTabs-flexContainer": {
-            flexWrap: "wrap",
-          },
-        }}
+    <Box
+    sx = {{
+      backgroundImage:'url("../../background.jpg")',
+      backgroundSize: 'cover',
+      borderTopWidth : "40px",
+      borderTopStyle : 'groove',
+      borderTopColor: 'blanchedalmond',
+    }}
+    > 
+      <Box width="80%" margin="0px auto" padding = "45px 0px 0px 0px"
+
       >
-        <Tab label="ALL" value="all" />
-        <Tab label="NEW ARRIVALS" value="newArrivals" />
-        <Tab label="BEST SELLERS" value="bestSellers" />
-        <Tab label="TOP RATED" value="topRated" />
-      </Tabs>
-      <Box
-        margin="0 auto"
-        display="grid"
-        gridTemplateColumns="repeat(auto-fill, 300px)"
-        justifyContent="space-around"
-        rowGap="20px"
-        columnGap="1.33%"
-      >
-        {value === "all" &&
-          items.map((item) => (
-            <Item item={item} key={`${item.name}-${item.id}`} />
-          ))}
-        {value === "newArrivals" &&
-          newArrivalsItems.map((item) => (
-            <Item item={item} key={`${item.name}-${item.id}`} />
-          ))}
-        {value === "bestSellers" &&
-          bestSellersItems.map((item) => (
-            <Item item={item} key={`${item.name}-${item.id}`} />
-          ))}
-        {value === "topRated" &&
-          topRatedItems.map((item) => (
-            <Item item={item} key={`${item.name}-${item.id}`} />
-          ))}
+        <Typography
+          variant="h3" textAlign="center" borderRadius="45px" backgroundColor = "white" padding = "10px 0px">
+          <b>Featured Products</b>
+        </Typography>
+        <Tabs
+          textColor="primary"
+          indicatorColor="primary"
+          value={value}
+          onChange={handleChange}
+          centered
+          TabIndicatorProps={{ sx: { display: breakPoint ? "block" : "none" } }}
+          sx={{
+            m: "25px",
+            "& .MuiTabs-flexContainer": {
+              flexWrap: "wrap",
+            },
+          }}
+        >
+          <Tab label="ALL" value="all" />
+          <Tab label="NEW ARRIVALS" value="newArrivals" />
+          <Tab label="BEST SELLERS" value="bestSellers" />
+          <Tab label="TOP RATED" value="topRated" />
+        </Tabs>
+        <Box
+          margin="0 auto"
+          display="grid"
+          gridTemplateColumns="repeat(auto-fill, 300px)"
+          justifyContent="space-around"
+          rowGap="20px"
+          columnGap="1.33%"
+        >
+          {value === "all" &&
+            items.map((item) => (
+              <Item item={item} key={`${item.name}-${item.id}`} />
+            ))}
+          {value === "newArrivals" &&
+            newArrivalsItems.map((item) => (
+              <Item item={item} key={`${item.name}-${item.id}`} />
+            ))}
+          {value === "bestSellers" &&
+            bestSellersItems.map((item) => (
+              <Item item={item} key={`${item.name}-${item.id}`} />
+            ))}
+          {value === "topRated" &&
+            topRatedItems.map((item) => (
+              <Item item={item} key={`${item.name}-${item.id}`} />
+            ))}
+        </Box>
       </Box>
     </Box>
   );

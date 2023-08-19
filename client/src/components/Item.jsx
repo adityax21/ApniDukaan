@@ -34,6 +34,7 @@ const Item = ({ item, width }) => {
         position="relative"
         onMouseOver={() => setIsHovered(true)}
         onMouseOut={() => setIsHovered(false)}
+        borderRadius= "45px"
       >
         <img
           alt={item.name}
