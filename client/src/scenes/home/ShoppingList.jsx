@@ -45,11 +45,15 @@ const ShoppingList = () => {
   return (
     <Box
     sx = {{
-      backgroundImage:'url("../../background.jpg")',
+      backgroundImage:'url("../../shoppinglistbg.jpg")',
       backgroundSize: 'cover',
       borderTopWidth : "40px",
       borderTopStyle : 'groove',
       borderTopColor: 'blanchedalmond',
+      padding : "0px 0px 40px 0px",
+      borderBottomWidth : "40px",
+      borderBottomStyle : 'groove',
+      borderBottomColor: 'blanchedalmond',
     }}
     > 
       <Box width="80%" margin="0px auto" padding = "45px 0px 0px 0px"
@@ -70,6 +74,8 @@ const ShoppingList = () => {
             m: "25px",
             "& .MuiTabs-flexContainer": {
               flexWrap: "wrap",
+              backgroundColor : "white",
+              borderRadius : "20px"
             },
           }}
         >

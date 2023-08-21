@@ -29,7 +29,12 @@ const Item = ({ item, width }) => {
   } = image;
 
   return (
-    <Box width={width}> {/*set width of item*/}
+    <Box width={width}
+      sx = {{
+        backgroundColor : "white",
+      }}
+      borderRadius = "20px"
+    >
       <Box
         position="relative"
         onMouseOver={() => setIsHovered(true)}
@@ -42,7 +47,7 @@ const Item = ({ item, width }) => {
           height="400px"
           src={`${url}`}
           onClick={() => navigate(`/item/${item.id}`)}
-          style={{ cursor: "pointer" }}
+          style={{ cursor: "pointer", padding : "10px", borderRadius : "20px" }}
         />
         <Box
           display={isHovered ? "block" : "none"} //to be shown only when hovered over image
@@ -79,14 +84,18 @@ const Item = ({ item, width }) => {
         </Box>
       </Box>
 
-      <Box mt="3px">
+      <Box mt="3px"
+        sx = {{
+          padding : "0px 0px 10px 12px"
+        }}
+      >
         <Typography variant="subtitle2" color={neutral.dark}>
           {category
             .replace(/([A-Z])/g, " $1") //match uppercase letters in string and add space before them
             .replace(/^./, (str) => str.toUpperCase())} {/*first char of string to UC */}
         </Typography>
         <Typography>{name}</Typography>
-        <Typography fontWeight="bold">${price}</Typography>
+        <Typography fontWeight="bold">₹ {price}</Typography>
       </Box>
     </Box>
   );
