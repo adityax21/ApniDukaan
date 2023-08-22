@@ -133,7 +133,14 @@ const ItemDetails = () => {
       </Box>
 
       {/* RELATED ITEMS */}
-      <Box mt="50px" width="100%">
+      <Box mt="50px" width="100%"
+      sx = {{
+        backgroundImage:'url("../../shoppinglistbg.jpg")',
+        backgroundSize: 'cover',
+        borderRadius : '25px',
+        padding : "25px"
+      }}
+      >
         <Typography variant="h3" fontWeight="bold">
           Related Products
         </Typography>
@@ -144,7 +151,7 @@ const ItemDetails = () => {
           columnGap="1.33%"
           justifyContent="space-between"
         >
-          {items.slice(0, 4).map((item, i) => (
+          {items.slice(0, 3).map((item, i) => (
             <Item key={`${item.name}-${i}`} item={item} />
           ))}
         </Box>

@@ -1,9 +1,8 @@
-import { Box, Typography, IconButton, useMediaQuery } from "@mui/material";
+import { Box, IconButton} from "@mui/material";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
-import { shades } from "../../theme";
 
 // imports all images from assets folder
 const importAll = (r) =>
@@ -17,7 +16,6 @@ export const heroTextureImports = importAll(
 );
 
 const MainCarousel = () => {
-  const isNonMobile = useMediaQuery("(min-width:600px)");
   return (
     <Carousel
       infiniteLoop={true}
@@ -67,30 +65,6 @@ const MainCarousel = () => {
               backgroundAttachment: "fixed",
             }}
           />
-          <Box
-            color="white"
-            padding="20px"
-            borderRadius="1px"
-            textAlign="left"
-            backgroundColor="rgb(0, 0, 0, 0.4)"
-            position="absolute"
-            top="12%"
-            left={isNonMobile ? "2%" : "0"}
-            right={isNonMobile ? undefined : "0"}
-            margin={isNonMobile ? undefined : "0 auto"}
-            maxWidth={isNonMobile ? undefined : "240px"}
-          >
-            <Typography color={shades.secondary[200]}></Typography>
-            <Typography variant="h1"
-              style = {{fontSize : "26px"}}
-            >ELEVATE YOUR WARDROBE : New Drop Soon</Typography>
-            <Typography
-              fontWeight="bold"
-              color={shades.secondary[300]}
-              sx={{ textDecoration: "underline" }}
-            >
-            </Typography>
-          </Box>
         </Box>
       ))}
     </Carousel>

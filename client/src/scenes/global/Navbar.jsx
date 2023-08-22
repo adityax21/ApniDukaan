@@ -24,12 +24,6 @@ function Navbar() {
 
   return (
     <Box
-    sx = {{
-      backgroundImage:'url("../../background.jpg")',
-      backgroundSize: 'cover',
-      borderBottomStyle : 'groove',
-      borderBlock : 'groove',
-    }}
       display="flex"
       alignItems="center"
       width="100%"
